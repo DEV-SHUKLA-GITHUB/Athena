@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  :root {
+    --button-gradient: linear-gradient(0deg, #A47CF3 0%, #683FEA 100%);
+  }

@@ -1,4 +1,5 @@
 import TradePage from './components/TradePage'
+import Stats from './components/Stats'
 import './index.css'
 
 function App() {
@@ -6,6 +7,7 @@ function App() {
   return (
     <>
      <TradePage/>
+      {/* <Stats/> */}
     </>
   )
 }

@@ -5,6 +5,7 @@ import {BiCandles} from 'react-icons/bi';
 import {AiOutlineStock} from 'react-icons/ai';
 import graph from '../assets/graph.svg'
 import Dropdown from "react-dropdown"
+import Card from './Card';
 // import 'react-dropdown/styles.css'
 import chart from '../assets/fullchart.svg'
 const TradePage = () => {
@@ -19,14 +20,9 @@ const TradePage = () => {
   const closeModal = () => {
     setIsModalOpen(false);
   };
-
-  const openInnerModal = (option) => {
-    setSelectedOption(option);
-    setIsInnerModalOpen(true);
-  };
-
   const closeInnerModal = () => {
     setIsInnerModalOpen(false);
+    console.log("hello")
   };
 
   const indicatorOptions = [
@@ -137,6 +133,10 @@ const TradePage = () => {
     'Woodies CCI',
     'Zig Zag'
   ];
+  const handleClick =() => {
+    setIsInnerModalOpen(true)
+    console.log(selectedOption)
+  }
   return (
     <div className='bg-[#261E35] w-full h-full'>
   <div className='text-white flex h-16 border-b-2 border-white border-opacity-40'>
@@ -149,21 +149,26 @@ const TradePage = () => {
         <AiOutlineStock className="m-1.5" /> Indicators
       </h2>
       {isModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="absolute inset-0 bg-black opacity-70"></div>
-          <div className="relative w-96 h-80 rounded-lg p-4">
-            <h3 className="text-white mb-2">Select an Indicator</h3>
-            {indicatorOptions.map((option, index) => (
-              <div
-                key={index}
-                className="text-white mb-2 cursor-pointer"
-                onClick={() => openInnerModal(option)}
-              >
-                {option}
-              </div>
-            ))}
+        <div className='fixed h-screen inset-0 flex items-center justify-center z-50'>
+          <div className='absolute opacity-70'></div>
+          <div className='w-1/4 border-2 border-white rounded-lg border-opacity-40 p-4 m-4'>
+            <div className='h-80 overflow-y-auto overflow-hidden scrollbar-thin scrollbar-thumb-gray-400'>
+              <h3 className='text-white mb-2'>Select an Indicator</h3>
+              {indicatorOptions.map((option, index) => (
+                <div
+                  key={index}
+                  className='text-white mb-2 cursor-pointer'
+                  onClick={() => {
+                    setSelectedOption(option);
+                    closeModal();
+                  }}
+                >
+                  {option}
+                </div>
+              ))}
+            </div>
             <button
-              className="text-white bg-blue-700 mt-4 py-2 px-4 rounded-lg"
+              className='text-white bg-blue-700 mt-4 py-2 px-4 rounded-lg'
               onClick={closeModal}
             >
               OK
@@ -171,21 +176,17 @@ const TradePage = () => {
           </div>
         </div>
       )}
-
-      {isInnerModalOpen && (
-        <div className="fixed inset-0 flex items-center justify-center z-50">
-          <div className="absolute inset-0 bg-black opacity-70"></div>
-          <div className="relative bg-white w-96 h-80 rounded-lg p-4">
-            <h3 className="text-white mb-2">Selected Option: {selectedOption}</h3>
-            <button
-              className="text-white bg-blue-700 mt-4 py-2 px-4 rounded-lg"
-              onClick={closeInnerModal}
-            >
-              OK
-            </button>
+        <div className='pt-4'>
+            <h6 className='size-8 text-white opacity-60'>Selected Option:</h6>
+            <div className='text-white'>{selectedOption} <span><button className='border rounded-lg bg-blue-600 ml-4' onClick={handleClick}>click me </button></span></div>
           </div>
-        </div>
-      )}
+
+          {isInnerModalOpen && (
+      <div className='text-white insert-0 z-50'>
+       <Card selected={selectedOption} closeInnerModal={closeInnerModal}/>
+      </div>
+    )}
+
     </div>
 
         <div className='flex h-full'>

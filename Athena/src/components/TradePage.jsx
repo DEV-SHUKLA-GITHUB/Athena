@@ -26,7 +26,7 @@ const TradePage = () => {
 
 
   const handleClick =() => {
-    setIsInnerModalOpen(true)
+    setIsInnerModalOpen(!isInnerModalOpen)
     console.log(selectedOption)
   }
   return (
@@ -74,14 +74,61 @@ const TradePage = () => {
           </div>
 
           {isInnerModalOpen && (
-      <div className='text-white insert-0 z-50'>
-       <Card selected={selectedOption} closeInnerModal={closeInnerModal}/>
-      </div>
-      // selectedOption=='24-hour Volume'&&(
-      //   <div>
-
-      //   </div>
-      // )
+              <div className='text-white insert-0 z-50'>
+                {selectedOption === '24-hour Volume' && (
+                  <Card
+                    selected={selectedOption}
+                    label={"price Source"}
+                    label2={"Target Currency"}
+                    option2={"Default"}
+                    option={"Close"}
+                    closeInnerModal={closeInnerModal}
+                  />
+                )}
+                {selectedOption === 'Accumulation/Distribution' && (
+                  <Card
+                    selected={selectedOption}
+                    timeframe={"ok"}
+                    closeInnerModal={closeInnerModal}
+                  />
+                )}
+                {selectedOption === 'Arnaud Legoux Moving Average' && (
+                  <Card
+                    selected={selectedOption}
+                    input={"ok"}
+                    title={"Window Size"}
+                    title2={"Offset"}
+                    title3={"Sigma"}
+                    timeframe={"ok"}
+                    closeInnerModal={closeInnerModal}
+                  />
+                )}
+                {selectedOption === 'Advance/Decline Ration (Bars)' || "Aroon" && (
+                  <Card
+                    selected={selectedOption}
+                    input={"ok"}
+                    title={"Length"}
+                    timeframe={"ok"}
+                    closeInnerModal={closeInnerModal}
+                  />
+                )}
+                {selectedOption === 'Advance/Decline Ration (Bars)' || "Aroon" && (
+                  <Card
+                    selected={selectedOption}
+                    input={"ok"}
+                    checkbox={"ok"}
+                    checkVal={"Reverse"}
+                    checkVal2={"Extend Left"}
+                    checkVal3={"Extend Right"}
+                    checkVal4={"Show Prices"}
+                    dropdown={"ok"}
+                    label={"Labels Position"}
+                    option={"Left"}
+                    title={"Background Transparency"}
+                    closeInnerModal={closeInnerModal}
+                  />
+                )}
+              </div>            
     )}
 
     </div>

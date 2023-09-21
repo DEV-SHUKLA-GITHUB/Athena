@@ -4,9 +4,8 @@ import {AiOutlineSearch} from 'react-icons/ai';
 import {BiCandles} from 'react-icons/bi';
 import {AiOutlineStock} from 'react-icons/ai';
 import graph from '../assets/graph.svg'
-import Dropdown from "react-dropdown"
 import Card from './Card';
-// import 'react-dropdown/styles.css'
+import indicatorOptions from '../data/data';
 import chart from '../assets/fullchart.svg'
 const TradePage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,114 +24,7 @@ const TradePage = () => {
     console.log("hello")
   };
 
-  const indicatorOptions = [
-    '24-hour Volume',
-    'Accumulation/Distribution',
-    'Advance Decline Line',
-    'Advance Decline Ratio',
-    'Advance/Decline Ration (Bars)',
-    'Arnaud Legoux Moving Average',
-    'Aroon',
-    'Auto Fib Extension',
-    'Auto Fib Retracement',
-    'Auto Pitchfork',
-    'Average Day Range',
-    'Average Direction Index',
-    'Average True Range',
-    'Awesome Oscillator',
-    'Balance of Power',
-    'Bollinger Bands',
-    'Bollinger Bands %B',
-    'Bollinger Bands Width',
-    'Bull Bear Power',
-    'Chaikin Money Flow',
-    'Chaikin Oscillator',
-    'Chande Kroll Stop',
-    'Chande Momentum Oscillator',
-    'Chop Zone',
-    'Choppiness Index',
-    'Commodity Channel Index',
-    'Connors RSI',
-    'Coppock Curve',
-    'Correlation Coefficient',
-    'Comulative Volume Index',
-    'Detrended Price Oscillator',
-    'Directional Movement Index',
-    'Divergence Indicator',
-    'Donchian Channels',
-    'Double EMA',
-    'Ease of Movement',
-    'Elder Force Index',
-    'Envelope',
-    'Fisher Transform',
-    'Gaps',
-    'Historical Volatility',
-    'Hull moving Average',
-    'Ichimoku Cloud',
-    'Keltner Channels',
-    'Klinger Oscillator',
-    'Know Sure Thing',
-    'Least Squares Moving Average',
-    'Linear Regression Channel',
-    'MA Cross',
-    'Mass Index',
-    'McGinley Dynamic',
-    'Median',
-    'Momentum',
-    'Money Flow Index',
-    'Moon Phases',
-    'Moving Average Convergence Divergence',
-    'Moving Average Exponential',
-    'Moving Average Ribbon',
-    'Moving Average Simple',
-    'Moving Average Weighted',
-    'Multi-Time Period Charts',
-    'Net Volume',
-    'On Balance Volume',
-    'Open Interest',
-    'Parabolic SAR',
-    'Pivot Points High Low',
-    'Pivot Points Standard',
-    'Price Oscillator',
-    'Price Volume Trend',
-    'Rate of Change',
-    'Relative Strength Index',
-    'Relative Vigor Index',
-    'Relative Volatility Index',
-    'Relative Volume at Time',
-    'Rob Booker - Intraday Pivot points',
-    'Rob Booker - Knoxville Divergence',
-    'Rob Booker - Missed Pivot Points',
-    'Rob Booker - Reversal',
-    'Rob Booker - Ziv Ghost Pivots',
-    'SMI Ergodic Indicator',
-    'SMI Ergodic Oscillator',
-    'Smoothed Moving Average',
-    'Stochastic',
-    'Stochastic Momentum Index',
-    'Stochastic RSI',
-    'Supertrend',
-    'Technical Ratings',
-    'Time Weighted Average Price',
-    'Triple EMA',
-    'TRIX',
-    'True Strength Index',
-    'Ultimate Oscillator',
-    'Up/Down Volume',
-    'Visible Average Price',
-    'Volatility Stop',
-    'Volume',
-    'Volume Oscillator',
-    'Volume Weighted Average Price',
-    'Volume Weighted Moving Average',
-    'Vortex Indicator',
-    'VWAP Auto Anchored',
-    'Williams Alligator',
-    'Williams Fractals',
-    'Williams Percent Range',
-    'Woodies CCI',
-    'Zig Zag'
-  ];
+
   const handleClick =() => {
     setIsInnerModalOpen(true)
     console.log(selectedOption)
@@ -185,6 +77,11 @@ const TradePage = () => {
       <div className='text-white insert-0 z-50'>
        <Card selected={selectedOption} closeInnerModal={closeInnerModal}/>
       </div>
+      // selectedOption=='24-hour Volume'&&(
+      //   <div>
+
+      //   </div>
+      // )
     )}
 
     </div>

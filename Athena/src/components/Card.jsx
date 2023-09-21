@@ -7,7 +7,7 @@ const Card = (props) => {
         <h2>Inputs</h2>
         <div>
           <div className='flex'>
-            <h3>Price Source</h3>
+            <h3>{props.label}</h3>
             {/* <div className='flex pt-6 justify-between'> */}
                   <select name="source" className='ml-4 bg-transparent border-2 border-white text-white border-opacity-40 rounded' >
                     <option value="OPEN">Defaults</option>

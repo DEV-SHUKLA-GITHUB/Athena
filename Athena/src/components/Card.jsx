@@ -2,6 +2,7 @@ import React from 'react'
 import Dropdown from './Dropdown'
 import Input from './Input'
 import Footer from './Footer'
+import Checkbox from './Checkbox'
 const Card = (props) => {
   return (
     <div>
@@ -28,11 +29,11 @@ const Card = (props) => {
         )}
         {props.checkbox&&(
           <div>
-            {props.checkVal && <Input title={props.checkVal} />}
-            {props.checkVal2 && <Input title={props.checkVal2} />}
-            {props.checkVal3 && <Input title={props.checkVal3} />}
-            {props.checkVal4 && <Input title={props.checkVal4} />}
-            {props.checkVal5 && <Input title={props.checkVal5} />}
+            {props.checkVal && <Checkbox checkVal={props.checkVal} />}
+            {props.checkVal2 && <Checkbox checkVal={props.checkVal2} />}
+            {props.checkVal3 && <Checkbox checkVal={props.checkVal3} />}
+            {props.checkVal4 && <Checkbox checkVal={props.checkVal4} />}
+            {props.checkVal5 && <Checkbox checkVal={props.checkVal5} />}
           </div>
         )}
         </div>

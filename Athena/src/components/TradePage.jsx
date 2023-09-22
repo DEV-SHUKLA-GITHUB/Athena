@@ -78,6 +78,7 @@ const TradePage = () => {
                 {selectedOption === '24-hour Volume' && (
                   <Card
                     selected={selectedOption}
+                    dropdown={"ok"}
                     label={"price Source"}
                     label2={"Target Currency"}
                     option2={"Default"}
@@ -103,7 +104,7 @@ const TradePage = () => {
                     closeInnerModal={closeInnerModal}
                   />
                 )}
-                {selectedOption === 'Advance/Decline Ration (Bars)' || "Aroon" && (
+                {selectedOption === 'Advance/Decline Ration (Bars)' || selectedOption === 'Aroon' && (
                   <Card
                     selected={selectedOption}
                     input={"ok"}
@@ -112,7 +113,7 @@ const TradePage = () => {
                     closeInnerModal={closeInnerModal}
                   />
                 )}
-                {selectedOption === 'Advance/Decline Ration (Bars)' || "Aroon" && (
+                {selectedOption === ('Auto Fib Extension') && (
                   <Card
                     selected={selectedOption}
                     input={"ok"}
@@ -121,10 +122,44 @@ const TradePage = () => {
                     checkVal2={"Extend Left"}
                     checkVal3={"Extend Right"}
                     checkVal4={"Show Prices"}
+                    checkVal5={"Show Levels"}
                     dropdown={"ok"}
                     label={"Labels Position"}
                     option={"Left"}
                     title={"Background Transparency"}
+                    title2={"Depth"}
+                    closeInnerModal={closeInnerModal}
+                  />
+                )}
+                {selectedOption === ('Auto Fib Retracement') && (
+                  <Card
+                    selected={selectedOption}
+                    input={"ok"}
+                    checkbox={"ok"}
+                    checkVal={"Reverse"}
+                    checkVal2={"Extend Left"}
+                    checkVal3={"Extend Right"}
+                    checkVal4={"Show Prices"}
+                    checkVal5={"Show Levels"}
+                    dropdown={"ok"}
+                    label={"Labels Position"}
+                    option={"Left"}
+                    title={"Background Transparency"}
+                    title2={"Depth"}
+                    title3={"Deviation"}
+                    closeInnerModal={closeInnerModal}
+                  />
+                )}
+                {selectedOption === ('Auto Pitchfork ') && (
+                  <Card
+                    selected={selectedOption}
+                    input={"ok"}
+                    dropdown={"ok"}
+                    label={"Type"}
+                    option={"Original"}
+                    title={"Background Transparency"}
+                    title2={"Depth"}
+                    checkVal={"Extend Left"}
                     closeInnerModal={closeInnerModal}
                   />
                 )}
